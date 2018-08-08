@@ -1,0 +1,63 @@
+Project 1: The Tax Accountant
+You have been asked to write a program to calculate income tax for a local Certified Public Accountant (CPA).  
+You do not know how many customers will need to be served so your program will have to repeat the process until the last 
+customer’s taxes have been calculated (use -1 for Customer ID to stop).
+
+Input
+
+Your program must take the following input:
+
+•	Customer ID Number (int)
+•	Total earnings for the year (double)
+•	Federal taxes withheld (double)
+•	State taxes withheld (double)
+•	Amount of tax deductions (double)
+
+Once you are confident your program runs, use the following dataset to run your program.  Also, include three customers of your own.
+
+Customer ID	     Total Earnings	     Federal Taxes W/H	     State Taxes W/H	     Deductions
+101	             $65,000	           $12,000	               $1,500	               $5,000
+102	             $12,000	           $2,100	                 $200	                 $3,000
+103	             $24,500	           $2,000	                 $400	                 $0
+104	             $38,775	           $8,965	                 $675	                 $2,575
+105	             $17,680	           $2,350	                 $545	                 $1,300
+
+Calculating Federal Tax
+People who earn more money have to pay a higher percentage of their income to taxes. 
+As a person’s income increases, there are transition points, called tax brackets, where additional taxes are paid.  
+Assume the following tax brackets.
+
+Income Bracket	Tax Rate (%)
+$0 – 10,000	0%
+$10,001 – 20,000	15%
+$20,001 – 40,000	20%
+Over $40,000	30%
+
+ 
+If a person made $65,000 with $5,000 in deductions, the taxable income would be $60,000 ($65,000 - $5,000).   
+Federal taxes would look like this:
+
+Income Bracket	     Tax Rate (%)	     Taxable Income ($)	     Federal Taxes ($)
+$0 – 10,000	         0%	               $10,000	               $0
+$10,001 – 20,000	   15%	             $10,000	               $1,500
+$20,001 – 40,000	   20%	             $20,000	               $4,000
+Over $40,000	       30%	             $20,000	               $6,000
+Total		                               $60,000	               $11,500
+
+Calculating State Tax
+To calculate state income tax, simply multiply the total Federal taxes due ($11,500) by 7% ($805).
+Calculating Refunds
+To calculate refunds (or additional taxes due), subtract Federal taxes from Federal taxes withheld.  
+Do the same for state taxes.  A customer receiving a refund should have a positive value.  
+Those owing additional taxes should be negative.
+
+Output
+Use the following format for your output.  
+NOTE: If you test your program with these numbers, it should produce the exact same output if it is running properly.
+
+
+Cust.                   Taxable Federal State Federal State Federal State
+ ID   Income Deductions Income    Tax    Tax    W/H    W/H  Refund  Refund
+===== ====== ========== ======= ======= ===== ======= ===== ======= ======
+100    $9000      $0     $9000      $0    $0   $2000   $150  $2000   $150
+200   $65000   $5000    $60000  $11500  $805  $12000  $1000   $500   $195
